@@ -1,21 +1,17 @@
 {
-  "name": "web-push-book-demo-server",
+  "name": "web-notifications-api",
   "version": "1.0.0",
   "description": "A basic demonstration of a web server that handles push notifications.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Matt Gaunt",
-  "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.15.2",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "jade": "^1.11.0",
     "mustache": "^2.2.1",
     "nedb": "^1.8.0",
-    "pug": "^2.0.0-beta6",
     "web-push": "^3.0.0"
   }
 }
