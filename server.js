@@ -279,6 +279,7 @@ app.all('/api/trigger-push-msg/:title/:msg', function (req, res) {
   });
 });
 
-const server = http.listen(9012, function () {
+const port = process.env.PORT || 9012;
+const server = http.listen(port, function () {
   console.log('Running on http://localhost:' + server.address().port);
 });
