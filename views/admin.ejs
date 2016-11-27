@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="home"  ng-controller="home">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Web notifications API</title>
+</head>
+<body class="admin">
+	Titulo: <input type="text" class="txtTitle"> 
+	Mensaje: <input type="text" class="txtMsg">
+	<button class="btnSendMsg">Enviar</button>
+	<br><br>
+	Select the user to send the notification
+	<ul class="clients">
+		<li class="" ng-repeat="user_list in user_show"">
+		    <input type="checkbox" value="{{ user_list._id }}">
+		    <span id='{{user_list.id}}' >ID: {{ user_list._id }}</span>
+		</li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  	<script src="js/angular.min.js"></script>
+	<script src="js/admin.js"></script>
+</body>
+</html>
