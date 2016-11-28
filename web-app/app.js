@@ -136,7 +136,7 @@ function sendSubscriptionToBackEnd(subscription) {
     if (!(responseData.data && responseData.data.success)) {
       throw new Error('Bad response from server.');
     }else{
-      document.cookie = "_xidx="+ responseData.data.id;
+      document.cookie = "_xidx="+ responseData.data.id+"; expires=Thu, 18 Dec 2033 12:00:00 UTC";
       $('#myid').text(getCookie('_xidx'))
 
     }
