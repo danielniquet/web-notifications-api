@@ -1,6 +1,14 @@
 const pushCheckbox = document.querySelector('.js-push-toggle-checkbox');
 const socket = io();
 
+const app = angular.module('home',[]);
+app.controller('home', function ($scope) {
+  setTimeout(function(){
+    if(!getCookie('_xidx')){
+      $('#enable-push-checkbox').trigger('click')      
+    }
+  },600)
+})
 
 function getCookie(cname) {
     var name = cname + "=";
@@ -239,8 +247,6 @@ function setUpPush() {
   });
 }
 
-var app = angular.module('home',[]);
-
 window.onload = function() {
   /**** START feature-detect ****/
   if (!('serviceWorker' in navigator)) {
@@ -256,14 +262,6 @@ window.onload = function() {
 
   // Push is supported.
   setUpPush();
-  app.controller('home', function ($scope) {
-    setTimeout(function(){
-      if(!getCookie('_xidx')){
-        $('#enable-push-checkbox').trigger('click')      
-      }
-    },600)
-  })
 };
-
 
 
