@@ -3,7 +3,7 @@
 //   event.waitUntil(Promise.resolve());
 // });
 self.addEventListener('push', event => {
-  console.log('Push Event Received.',event.data);
+  console.log('Push Event Received.',event.data.text());
     var payload = event.data ? event.data.text() : 'no title|no payload';
   event.waitUntil(
       self.registration.showNotification(payload.split('|')[0], {

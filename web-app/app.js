@@ -1,7 +1,10 @@
 const pushCheckbox = document.querySelector('.js-push-toggle-checkbox');
 const socket = io();
 
+var app = angular.module('home',[]);
+app.controller('home', function ($scope) {
 
+  
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -172,6 +175,8 @@ function setUpPush() {
     if (Notification.permission === 'denied') {
       console.warn('The notification permission has been blocked. Nothing we can do.');
       return;
+    }else{
+      subscribeUserToPush()
     }
 
     pushCheckbox.addEventListener('change', function(event) {
@@ -254,11 +259,10 @@ window.onload = function() {
   setUpPush();
 };
 
-var app = angular.module('home',[]);
-app.controller('home', function ($scope) {
+
   setTimeout(function(){
     if(!getCookie('_xidx')){
       $('#enable-push-checkbox').trigger('click')      
     }
-  },500)
+  },600)
 })
